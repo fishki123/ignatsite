@@ -13,12 +13,12 @@
 	<div class="container">
 		<a rel='prefetch' class="navbar-brand nav-link" class:active="{$page.path === '/'}" href="/">Ignat Japan</a>
 		<ul class="nav navbar-nav pull-xs-right">
-			<li class="nav-item">
-				<div rel='prefetch' class="nav-link" >
-					<i class="ion-search"></i>
-					<input class="search" type="search">
-				</div>
-			</li>
+<!--			<li class="nav-item">-->
+<!--				<div rel='prefetch' class="nav-link" >-->
+<!--					<i class="ion-search"></i>-->
+<!--					<input class="search" type="search">-->
+<!--				</div>-->
+<!--			</li>-->
 			<li class="nav-item">
 				<a rel='prefetch' class="nav-link" class:active="{$page.path === '/'}" href="/">
 					<i class="ion-home"></i>
@@ -42,10 +42,10 @@
 								<i class="ion-person"></i>
 								Мой профиль
 							</a>
-							<a rel='prefetch' href='/admin' class="dropdown-item">
-								<i class="ion-card"></i>
-								Админ панель
-							</a>
+<!--							<a rel='prefetch' href='/admin' class="dropdown-item">-->
+<!--								<i class="ion-card"></i>-->
+<!--								Админ панель-->
+<!--							</a>-->
 							<div class="dropdown-divider"></div>
 							<button class="dropdown-item logout btn btn-outline-danger" on:click={logout}>
 								<img src="https://img.icons8.com/ios-filled/50/000000/logout-rounded-up.png" alt="logout">
