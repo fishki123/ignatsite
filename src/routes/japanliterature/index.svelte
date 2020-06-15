@@ -1,11 +1,10 @@
 <script>
-    import { stores } from '@sapper/app';
+    import { goto, stores } from '@sapper/app';
     import { onMount } from 'svelte';
     import MainView from '../_components/MainView/index.svelte';
     import Tags from '../_components/Tags.svelte';
     import * as api from 'api.js';
     export let p = 1;
-
     let tab;
     let tag;
     let tags;
@@ -40,19 +39,41 @@
         status: "warning",
         noIcon: true
     });
+    import { createEventDispatcher } from 'svelte';
+    export let filters;
+    export let filtered;
+    const dispatch = createEventDispatcher();
+    let selected = filtered ? filtered : 'all';
+    function updateFilter(event) {
+        if (selected) {
+            dispatch('updatefilter', selected);
+        }
+    }
+    if (typeof window !== 'undefined') {
+        // If the user uses the forward or backward button - set the select box and content
+        window.onpopstate = function(event) {
+            const urlParams = new URLSearchParams(window.location.search);
+
+            // Get the parameter from the URL and update selected
+            selected = urlParams.has('filter') ? urlParams.get('filter') : 'all';
+            // Update the content
+            dispatch('updatefilter', selected);
+        }
+    }
 </script>
 <svelte:head>
     <title>Японская литература</title>
 </svelte:head>
 <div class="first">
-    <div class="second" id="myDropdown">
+    <div class="second">
         {#if $session.user}
         <div class="container page">
             <a rel='' href="/editor" class:active="{$page.path === '/editor'}" >
-                <i class="ion-compose">Добавить японскую литературу</i>&nbsp;
+                <i class="ion-compose"></i>&nbsp;
+                Добавить японскую литературу
             </a>
         </div>
-            <MainView  {p} {tag} bind:tab />
+            <MainView {p} {tag} bind:tab />
         {:else}
             <MainView {p} {tag} bind:tab />
         {/if}

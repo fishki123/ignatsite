@@ -49,12 +49,14 @@
 				</a>
 				<div class="nav-dropdown_2 dropdown-menu dropdown-menu-right_2" style="text-align: center">
 					<span>
-						<a href='/editor/{article.slug}' class="btn btn-outline-secondary btn-sm">
-							<i class="ion-edit"/> Редактировать
+						<a href='/editor/{article.slug}' class="btn">
+							<i class="ion-edit"/>
+							Редактировать
 						</a>
-						<button class="btn btn-outline-danger btn-sm" on:click='{remove}' on:click={sendPositive} status="positive">
-							<i class="ion-trash-a"/> Удалить литературу
-						</button>
+						<a class="btn" on:click='{remove}' on:click={sendPositive} status="positive">
+							<i class="ion-trash-a"/>
+							Удалить литературу
+						</a>
 						<Notifications />
 					</span>
 				</div>

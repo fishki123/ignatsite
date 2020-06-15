@@ -76,19 +76,35 @@
 				<form>
 					<fieldset>
 						<fieldset class="form-group">
-							<input class="form-control form-control-lg" type="text" placeholder="Название" bind:value={article.title}>
+							<h3>
+								<i class="ion-document ion"></i>
+								Название:
+							</h3>
+							<input class="form-control form-control-lg" type="text" placeholder="" bind:value={article.title}>
 						</fieldset>
-
+							<h3>
+								<i class="ion-document-text ion"></i>
+								Краткое описание:
+							</h3>
 						<fieldset class="form-group">
-							<input class="form-control" type="text" placeholder="Краткое описание" bind:value={article.description}>
+							<input class="form-control" type="text" placeholder="" bind:value={article.description}>
 						</fieldset>
-
+							<h3>
+								<i class="ion-clipboard ion"></i>
+								Подробное описание:
+							</h3>
 						<fieldset class="form-group">
-							<textarea class="form-control" rows="8" placeholder="Подробное описание" bind:value={article.body}/>
+							<textarea class="form-control" rows="8" placeholder="" bind:value={article.body}/>
 						</fieldset>
-
+							<h3>
+								<i class="ion-pricetags ion"></i>
+								Теги
+								/
+								<i class="ion-wand ion"></i>
+								жанры:
+							</h3>
 						<fieldset class="form-group">
-							<input class="form-control" type="text" placeholder="Теги/жанры" use:enter={addTag}>
+							<input class="form-control" type="text" placeholder="" use:enter={addTag}>
 
 							<div class="tag-list">
 								{#each article.tagList as tag, i}
@@ -109,3 +125,9 @@
 		</div>
 	</div>
 </div>
+<style>
+	.ion
+	{
+		color:black;
+	}
+</style>

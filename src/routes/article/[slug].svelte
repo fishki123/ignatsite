@@ -40,7 +40,8 @@
 
 	<div class="banner">
 		<div class="container">
-			<h1>{article.title}</h1>
+			<div class="five"></div>
+			<h1 class="we"style="text-align: center">{article.title}</h1>
 			<ArticleMeta {article} user={$session.user}/>
 		</div>
 	</div>
@@ -84,6 +85,17 @@
 		height: auto;
 		box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
 		border-radius: 4px;
+		border: 1px solid #000;
+		font-family: 'Roboto', sans-serif;
 		width: 100%;
+	}
+	.five
+	{
+		background-color: #718096;
+		width: auto;
+		height: 256px;
+		border: 1px solid #000;
+		border-radius: 4px;
+		font-family: 'Roboto', sans-serif;
 	}
 </style>

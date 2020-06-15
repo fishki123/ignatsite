@@ -49,6 +49,9 @@
 					<fieldset class="form-group">
 						<input class="form-control form-control-lg" type="password" placeholder="Пароль" bind:value={password}>
 					</fieldset>
+					<fieldset class="form-group">
+						<input class="form-control form-control-lg" type="text" placeholder="invite-код">
+					</fieldset>
 					<button class="btn btn-lg btn-primary pull-xs-right">
 						Зарегистрироваться
 					</button>

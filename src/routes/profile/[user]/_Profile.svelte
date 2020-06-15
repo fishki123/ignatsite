@@ -42,8 +42,7 @@
 					<p>{profile.bio}</p>
 					{#if isUser}
 						<a href="/settings" class="btn btn-sm btn-outline-secondary action-btn">
-							<i class="ion-gear-a">
-							</i>
+							<i class="ion-gear-a"></i>
 							Настройки
 						</a>
 					{/if}
