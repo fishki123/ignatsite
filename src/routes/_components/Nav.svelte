@@ -14,10 +14,10 @@
 		<a rel='prefetch' class="navbar-brand nav-link" class:active="{$page.path === '/'}" href="/">Ignat Japan</a>
 		<ul class="nav navbar-nav pull-xs-right">
 			<li class="nav-item">
-				<a rel='prefetch' class="nav-link" class:active="{$page.path === '/'}" href="/">
+				<div rel='prefetch' class="nav-link" >
 					<i class="ion-search"></i>
-					<input>
-				</a>
+					<input class="search" type="search">
+				</div>
 			</li>
 			<li class="nav-item">
 				<a rel='prefetch' class="nav-link" class:active="{$page.path === '/'}" href="/">
@@ -72,6 +72,20 @@
 	</div>
 </nav>
 <style>
+	.search
+	{
+		font-family: "Arvo";
+		font-weight: 400;
+		color: #377D6A;
+		background: rgba(0,0,0,0.3);
+		border: none;
+		outline: none;
+		color: #fff;
+		text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+		border: 1px solid rgba(0,0,0,0.3);
+		border-radius: 4px;
+		box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px  1px;
+	}
 	@media (min-width: 544px)
 	{
 		.container

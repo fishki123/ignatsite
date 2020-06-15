@@ -57,7 +57,7 @@
             <li>
                 {num}
                 <button class="btn btn-sm btn-outline-secondary action-btn" on:click={() => remove(num)}>
-                Remove
+                Удалить
             </button>
             </li>
         {/each}

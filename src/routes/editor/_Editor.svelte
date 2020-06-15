@@ -82,6 +82,13 @@
 							</h3>
 							<input class="form-control form-control-lg" type="text" placeholder="" bind:value={article.title}>
 						</fieldset>
+						<fieldset class="form-group">
+							<h3>
+								<i class="ion-link ion"></i>
+								URL:
+							</h3>
+							<input class="form-control form-control-lg" type="text" placeholder="" bind:value={article.poster}>
+						</fieldset>
 							<h3>
 								<i class="ion-document-text ion"></i>
 								Краткое описание:

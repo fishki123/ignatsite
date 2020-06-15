@@ -58,11 +58,19 @@
 				<ListErrors {errors}/>
 
 				<form on:submit|preventDefault={submit}>
+					<h3>
+						<i class="ion-email ion"></i>
+						Почта:
+					</h3>
 					<fieldset class="form-group">
-						<input class="form-control form-control-lg" type="text" placeholder="Почта" bind:value={email}>
+						<input class="form-control form-control-lg" type="text" placeholder="" bind:value={email}>
 					</fieldset>
+					<h3>
+						<i class="ion-key ion"></i>
+						Пароль:
+					</h3>
 					<fieldset class="form-group">
-						<input class="form-control form-control-lg" type="password" placeholder="Пароль" bind:value={password}>
+						<input class="form-control form-control-lg" type="password" placeholder="" bind:value={password}>
 					</fieldset>
 					<button class="btn btn-lg btn-primary pull-xs-right" type="submit" disabled='{!email || !password}'>
 						Авторизоваться

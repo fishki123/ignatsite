@@ -39,6 +39,20 @@
 	const afterRate = rate => {
 		console.log(rate);
 	};
+	async function toggleFavorite() {
+		// optimistic UI
+		if (article.favorited) {
+			article.favoritesCount -= 1;
+			article.favorited = false;
+		} else {
+			article.favoritesCount += 1;
+			article.favorited = true;
+		}
+
+		({ article } = await (article.favorited
+				? api.post(`articles/${article.slug}/favorite`, null, user && user.token)
+				: api.del(`articles/${article.slug}/favorite`, user && user.token)));
+	}
 </script>
 
 <div class="article-meta">
@@ -53,13 +67,30 @@
 							<i class="ion-edit"/>
 							Редактировать
 						</a>
-						<a class="btn" on:click='{remove}' on:click={sendPositive} status="positive">
+						<button class="btn btn-sm r" on:click='{remove}' on:click={sendPositive} status="positive">
 							<i class="ion-trash-a"/>
 							Удалить литературу
-						</a>
+						</button>
+							<div class="pull-xs-right" style="text-alight:center">
+								<button class='btn btn-sm l {article.favorited ? "btn-primary" : "btn-outline-primary"}' on:click={toggleFavorite}>
+									<i class="ion-plus-round"></i>
+									{article.favoritesCount ? 'Убрать из списка' : 'Добавить в список'}
+								</button>
+							</div>
 						<Notifications />
 					</span>
 				</div>
 			</div>
 	{/if}
 </div>
+<style>
+	.r
+	{
+		color:red;
+		background:white
+	}
+	.l
+	{
+		margin-right:5px;
+	}
+</style>

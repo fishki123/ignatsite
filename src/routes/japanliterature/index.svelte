@@ -73,9 +73,13 @@
                 Добавить японскую литературу
             </a>
         </div>
+        <div class="row">
             <MainView {p} {tag} bind:tab />
+        </div>
         {:else}
-            <MainView {p} {tag} bind:tab />
+            <div class="row">
+                <MainView {p} {tag} bind:tab />
+            </div>
         {/if}
     </div>
 </div>

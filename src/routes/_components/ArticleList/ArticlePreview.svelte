@@ -32,24 +32,16 @@
 	<div class="article-meta">
 		<div class="info">
 			<span class="date">
+				<i class="ion-calendar ion"></i>
 				{new Date(article.createdAt).toDateString()}
 			</span>
 		</div>
-
-		{#if user}
-			<div class="pull-xs-right">
-				<button class='btn btn-sm {article.favorited ? "btn-primary" : "btn-outline-primary"}' on:click={toggleFavorite}>
-					<i class="ion-plus-round"></i>
-					{article.favoritesCount ? 'Убрать из списка' : 'Добавить в список'}
-				</button>
-			</div>
-		{/if}
 	</div>
 	<a href='/article/{article.slug}' rel='prefetch' class="preview-link">
 		<div class="six">
 			<div class="three container">
-				<div class="ten">
-					<div class="five"></div>
+				<div class="tens">
+					<img src="{article.poster}" alt="post">
 				</div>
 				<div class="ten">
 					<div class="four">
@@ -75,8 +67,12 @@
 	</a>
 </div>
 <style>
-	.awe
+	.tens
 	{
+		align-items: center;
+		text-align: center;
+		width: auto;
+		height:auto;
 	}
 	.teg
 	{
@@ -100,15 +96,6 @@
 		border-radius: 4px;
 		font-family: 'Roboto', sans-serif;
 	}
-	.five
-	{
-		background-color: #718096;
-		width: auto;
-		height: 256px;
-		border: 1px solid #000;
-		border-radius: 4px;
-		font-family: 'Roboto', sans-serif;
-	}
 	.six
 	{
 		padding: 4px;
@@ -125,11 +112,6 @@
 	.seven h2
 	{
 		color: blue;
-	}
-	.eight
-	{
-		font-weight: bold;
-		font-family: 'Roboto', sans-serif;
 	}
 	.nine
 	{

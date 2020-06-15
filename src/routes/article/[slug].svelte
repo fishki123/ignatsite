@@ -37,10 +37,19 @@
 </svelte:head>
 
 <div class="article-page">
-
 	<div class="banner">
 		<div class="container">
-			<div class="five"></div>
+			<div class="article-meta">
+				<div class="info">
+			<span class="date">
+				<i class="ion-calendar ion"></i>
+				{new Date(article.createdAt).toDateString()}
+			</span>
+				</div>
+			</div>
+			<div class="tens">
+				<img src="{article.poster}" alt="pos">
+			</div>
 			<h1 class="we"style="text-align: center">{article.title}</h1>
 			<ArticleMeta {article} user={$session.user}/>
 		</div>
@@ -61,17 +70,21 @@
 				</ul>
 			</div>
 		</div>
-
 		<hr />
-
 		<div class="article-actions"></div>
-
 		<div class="row">
 			<CommentContainer {slug} {comments} user={$session.user} errors={commentErrors}/>
 		</div>
 	</div>
 </div>
 <style>
+	.tens
+	{
+		border: 4px;
+		border-color: black;
+		align-items: center;
+		text-align: center;
+	}
 	.we
 	{
 		margin-top: 30px;
@@ -88,14 +101,5 @@
 		border: 1px solid #000;
 		font-family: 'Roboto', sans-serif;
 		width: 100%;
-	}
-	.five
-	{
-		background-color: #718096;
-		width: auto;
-		height: 256px;
-		border: 1px solid #000;
-		border-radius: 4px;
-		font-family: 'Roboto', sans-serif;
 	}
 </style>
